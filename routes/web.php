@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Product\ProductController@index');
 
 Route::group(['middleware' => 'guest']  , function(){
     Route::get('/products', 'Product\ProductController@index')->name('products');
